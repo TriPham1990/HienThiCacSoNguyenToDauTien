@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Hiển thị các số nguyên tố đầu tiên</title>
+</head>
+<body>
+<script>
+    let numbers = parseInt(prompt('Enter the number:'));
+    let count = 2;
+
+    function isPrime(number) {
+        let check = true;
+        for (let j = 2; j < number; j++) {
+            if (number % j === 0) {
+                check = false;
+                break;
+            }
+        }
+        return check;
+    }
+
+    if (numbers === 1) {
+        document.write(2);
+    } else if (numbers === 2) {
+        document.write((2 + '<br>' + 3));
+    } else {
+        document.write((2 + '<br>' + 3 + '<br>'));
+        let i = 4;
+        while (count < numbers) {
+            let check = isPrime(i);
+            if (check) {
+                document.write(i + '<br>');
+                count++;
+            }
+            i++;
+        }
+    }
+</script>
+</body>
+</html>
